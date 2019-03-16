@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import User from "./models/User";
 import Article from "./models/Article";
 import Comment from "./models/Comment";
-import schema from "../graphql";
+import schema from "../server/graphql";
 
 const options = {
   port: process.env.PORT || "4000",
@@ -24,7 +24,7 @@ const context = {
 // Connect to MongoDB with Mongoose.
 mongoose
   .connect(
-    'mongodb://localhost/conduit',
+    'mongodb://localhost:27017/conduit',
     {
       useCreateIndex: true,
       useNewUrlParser: true
